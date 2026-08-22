@@ -1,0 +1,16 @@
+# Fotos originales sin optimizar (~64 MB), sueltas en la raíz de /web.
+# La barra inicial ancla el patrón a este nivel, para no excluir /img,
+# que sí va versionado: es lo que consume el sitio.
+/*.jpg
+/*.jpeg
+/*.png
+/*.webp
+
+# Versiones previas del diseño
+/index.original.backup.html
+/index.v2-editorial.html
+
+# Sistema
+Thumbs.db
+desktop.ini
+.DS_Store

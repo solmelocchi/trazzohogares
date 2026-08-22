@@ -1,0 +1,104 @@
+{
+  "las-moras-01": {
+    "w": 5449,
+    "h": 3065,
+    "color": "#1b2336",
+    "src": "las_moras_luna.jpg"
+  },
+  "las-moras-02": {
+    "w": 5472,
+    "h": 3648,
+    "color": "#717280",
+    "src": "las_moras_noche.jpg"
+  },
+  "las-moras-03": {
+    "w": 8000,
+    "h": 6000,
+    "color": "#a5a2a4",
+    "src": "Complejo Las Moras - © Luis Abba-00-5.jpg"
+  },
+  "casa-alma-01": {
+    "w": 1432,
+    "h": 814,
+    "color": "#788782",
+    "src": "casa_alma.png"
+  },
+  "casa-alma-02": {
+    "w": 1824,
+    "h": 2174,
+    "color": "#766c6a",
+    "src": "estar.png"
+  },
+  "peralitos-01": {
+    "w": 2374,
+    "h": 1760,
+    "color": "#969889",
+    "src": "Gemini_Generated_Image_b36qb2b36qb2b36q.png"
+  },
+  "peralitos-02": {
+    "w": 2374,
+    "h": 1643,
+    "color": "#9a7d5f",
+    "src": "estar peralitos.png"
+  },
+  "vieytes-01": {
+    "w": 2386,
+    "h": 1792,
+    "color": "#597272",
+    "src": "LAR_DE_VIEYTES_II.png"
+  },
+  "casa-dusk-01": {
+    "w": 2392,
+    "h": 1657,
+    "color": "#565a58",
+    "src": "fachada.png"
+  },
+  "casa-dusk-02": {
+    "w": 2392,
+    "h": 1444,
+    "color": "#87887a",
+    "src": "fachada_posterior.png"
+  },
+  "vistalba-01": {
+    "w": 1277,
+    "h": 957,
+    "color": "#7a7d7c",
+    "src": "hotel_entrada.jpg"
+  },
+  "vistalba-02": {
+    "w": 1277,
+    "h": 957,
+    "color": "#4b4b57",
+    "src": "20251029_202637.jpg"
+  },
+  "vistalba-03": {
+    "w": 1277,
+    "h": 957,
+    "color": "#5e5e67",
+    "src": "20251029_202033.jpg"
+  },
+  "vistalba-obra": {
+    "w": 1010,
+    "h": 1346,
+    "color": "#74777a",
+    "src": "20251031_194345.jpg"
+  },
+  "render-fachada": {
+    "w": 1679,
+    "h": 937,
+    "color": "#685f54",
+    "src": "FACHADA FRONTAL (1).png"
+  },
+  "render-estar": {
+    "w": 1672,
+    "h": 940,
+    "color": "#7c6851",
+    "src": "ESTAR COMEDOR7.png"
+  },
+  "render-terraza": {
+    "w": 1600,
+    "h": 914,
+    "color": "#66523d",
+    "src": "TERRAZA.jpeg"
+  }
+}
