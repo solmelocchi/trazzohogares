@@ -39,12 +39,5 @@ Requiere Pillow:
 pip install Pillow
 ```
 
-## Publicar
 
-No hay compilación: `index.html` se sirve tal cual. Para GitHub Pages, elegí
-la rama `main` y la carpeta raíz en Settings → Pages.
 
-## Pendientes
-
-- Falta el nombre y el año de la casa de `fachada.png`, hoy sin proyecto propio.
-- Confirmar el uso comercial de las tres imágenes que traían marca de agua de IA.
