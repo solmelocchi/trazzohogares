@@ -170,12 +170,46 @@ picture{display:contents}
   backdrop-filter:blur(14px) saturate(1.1);
   border-bottom:1px solid var(--rule-inv-soft)}
 .bar.stuck .bar__rule{opacity:0}
-@media(max-width:860px){
-  .bar__nav a span.lbl{display:none}
-  .bar__nav{gap:4px}
-  .bar__nav a{font-size:.68rem;letter-spacing:.04em}
-  .bar__nav a::before{width:5px;height:5px}
+/* ── menú móvil ─────────────────────────────────────────── */
+.burger{display:none;background:none;border:0;cursor:pointer;
+  width:38px;height:38px;position:relative;color:inherit;margin-right:-8px}
+.burger i{position:absolute;left:8px;right:8px;height:1px;background:currentColor;
+  transition:transform .4s var(--ease),opacity .25s}
+.burger i:nth-child(1){top:14px}
+.burger i:nth-child(2){bottom:14px}
+.burger[aria-expanded="true"] i:nth-child(1){transform:translateY(4px) rotate(45deg)}
+.burger[aria-expanded="true"] i:nth-child(2){transform:translateY(-4px) rotate(-45deg)}
+
+.sheet{
+  position:fixed;inset:0;z-index:790;background:var(--night);color:var(--paper);
+  display:flex;flex-direction:column;justify-content:center;
+  padding:0 var(--gut);
+  opacity:0;visibility:hidden;transition:opacity .45s var(--ease),visibility .45s;
 }
+.sheet.open{opacity:1;visibility:visible}
+.sheet a{
+  display:flex;align-items:baseline;gap:16px;
+  font-family:var(--sans);font-weight:200;
+  font-size:clamp(2rem,11vw,3.2rem);line-height:1;letter-spacing:-.02em;
+  padding:clamp(14px,3.4vw,22px) 0;
+  border-bottom:1px solid var(--rule-inv-soft);
+}
+.sheet a small{font-family:var(--sans);font-weight:400;font-size:.6rem;
+  letter-spacing:.26em;color:var(--concrete)}
+.sheet__foot{margin-top:clamp(28px,6vw,48px);display:flex;flex-direction:column;gap:6px}
+.sheet__foot span{font-family:var(--sans);font-size:.62rem;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--concrete)}
+.sheet__foot a{font-size:.95rem;border:0;padding:0;font-family:var(--text);
+  font-weight:300;letter-spacing:0;display:block}
+
+@media(max-width:860px){
+  /* los links de la barra pasan al panel: en la barra sólo quedaban los
+     puntos, sin texto, y no se entendía qué eran */
+  .bar__nav a[data-nav]{display:none}
+  .burger{display:block}
+  .bar__nav{gap:12px}
+}
+@media(min-width:861px){.sheet{display:none}}
 
 /* el trazo tiene que escalar con el viewBox: con non-scaling-stroke
    el monograma se convierte en una mancha a tamaño chico */
@@ -640,9 +674,26 @@ picture{display:contents}
       <a href="#estudio" data-nav="estudio"><span class="lbl">Estudio</span></a>
       <a href="#en-proceso" data-nav="en-proceso"><span class="lbl">En proceso</span></a>
       <a href="#contacto" data-nav="contacto"><span class="lbl">Contacto</span></a>
+
+      <button class="burger" id="burger" type="button" aria-label="Abrir menú"
+              aria-expanded="false" aria-controls="sheet">
+        <i></i><i></i>
+      </button>
     </nav>
   </div>
 </div>
+
+<nav class="sheet" id="sheet" aria-label="Menú">
+  <a href="#obra"><small>01</small> Obra</a>
+  <a href="#estudio"><small>02</small> Estudio</a>
+  <a href="#en-proceso"><small>03</small> En proceso</a>
+  <a href="#contacto"><small>04</small> Contacto</a>
+  <div class="sheet__foot">
+    <span>Mendoza, Argentina</span>
+    <a href="https://wa.me/542616651611" target="_blank" rel="noopener">+54 261 665 1611</a>
+    <a href="mailto:martinbatizmb@gmail.com">martinbatizmb@gmail.com</a>
+  </div>
+</nav>
 
 <main id="top">
 
@@ -1242,6 +1293,32 @@ picture{display:contents}
   addEventListener('resize', onScroll);
   addEventListener('load', onScroll);
   frame();
+
+  /* ── menú móvil ───────────────────────────────────────── */
+  var burger = document.getElementById('burger');
+  var sheet  = document.getElementById('sheet');
+
+  function setSheet(open) {
+    sheet.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', String(open));
+    burger.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+  burger.addEventListener('click', function () {
+    setSheet(!sheet.classList.contains('open'));
+  });
+  /* al tocar un destino se cierra, si no el panel tapa la sección */
+  sheet.addEventListener('click', function (e) {
+    if (e.target.closest('a')) setSheet(false);
+  });
+  addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && sheet.classList.contains('open')) setSheet(false);
+  });
+  /* si se agranda la ventana con el panel abierto, la barra vuelve a
+     mostrar los links y el panel quedaría trabado tapando todo */
+  addEventListener('resize', function () {
+    if (innerWidth > 860 && sheet.classList.contains('open')) setSheet(false);
+  });
 
   /* ── revelado ─────────────────────────────────────────── */
   var targets = document.querySelectorAll('.rv, .media');
