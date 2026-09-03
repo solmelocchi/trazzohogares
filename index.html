@@ -164,9 +164,11 @@ picture{display:contents}
 .bar__brand em i{font-style:normal;font-family:var(--sans);font-weight:400;
   font-size:.4rem;letter-spacing:.26em;white-space:nowrap;line-height:1}
 @media(max-width:860px){.bar__brand em{display:none}}
-.bar.stuck{color:var(--ink);background:rgba(255,255,255,.94);
+/* barra en grafito: el texto y el monograma ya vienen en crema desde el
+   hero, así que al fijarse sólo cambia el fondo */
+.bar.stuck{color:var(--paper);background:rgba(34,32,28,.94);
   backdrop-filter:blur(14px) saturate(1.1);
-  border-bottom:1px solid var(--rule-soft)}
+  border-bottom:1px solid var(--rule-inv-soft)}
 .bar.stuck .bar__rule{opacity:0}
 @media(max-width:860px){
   .bar__nav a span.lbl{display:none}
