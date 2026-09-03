@@ -164,9 +164,10 @@ picture{display:contents}
 .bar__brand em i{font-style:normal;font-family:var(--sans);font-weight:400;
   font-size:.4rem;letter-spacing:.26em;white-space:nowrap;line-height:1}
 @media(max-width:860px){.bar__brand em{display:none}}
-.bar.stuck{color:var(--ink);background:rgba(237,229,216,.94);
-  backdrop-filter:blur(14px) saturate(1.1)}
-.bar.stuck .bar__rule{opacity:.2}
+.bar.stuck{color:var(--ink);background:rgba(255,255,255,.94);
+  backdrop-filter:blur(14px) saturate(1.1);
+  border-bottom:1px solid var(--rule-soft)}
+.bar.stuck .bar__rule{opacity:0}
 @media(max-width:860px){
   .bar__nav a span.lbl{display:none}
   .bar__nav{gap:4px}
@@ -514,13 +515,13 @@ picture{display:contents}
 
 /* ═══ PANEL DE PROYECTO ══════════════════════════════════ */
 .panel{
-  position:fixed;inset:0;z-index:900;background:var(--paper);color:var(--ink);
+  position:fixed;inset:0;z-index:900;background:var(--white);color:var(--ink);
   overflow-y:auto;opacity:0;visibility:hidden;
   transition:opacity .55s var(--ease),visibility .55s;
 }
 .panel.open{opacity:1;visibility:visible}
 .panel__bar{
-  position:sticky;top:0;z-index:5;background:rgba(237,229,216,.94);
+  position:sticky;top:0;z-index:5;background:rgba(255,255,255,.94);
   backdrop-filter:blur(12px);border-bottom:1px solid var(--rule);
 }
 .panel__bar .bar__nav{max-width:var(--wrap);margin-inline:auto;
@@ -592,7 +593,7 @@ picture{display:contents}
 .pv__specs dd{font-size:.92rem}
 .pv__nav{display:flex;gap:1px;background:var(--rule);
   border:1px solid var(--rule);margin-top:clamp(28px,3.4vw,44px)}
-.pv__nav button{flex:1;background:var(--paper);border:0;cursor:pointer;
+.pv__nav button{flex:1;background:var(--white);border:0;cursor:pointer;
   padding:15px 12px;font-family:var(--sans);font-size:.62rem;
   letter-spacing:.18em;text-transform:uppercase;color:var(--muted);
   transition:background .35s,color .35s}
