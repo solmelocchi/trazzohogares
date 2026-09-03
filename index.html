@@ -36,6 +36,7 @@
   --paper:#EDE5D8;
   --paper-2:#E2D8C7;
   --paper-3:#D6C9B4;
+  --white:#FFFFFF;        /* fondo de Obra y Contacto */
   --ink:#171410;
   --night:#22201C;   /* grafito cálido: el negro puro pesaba demasiado de fondo */
   --terra:#A2643C;
@@ -243,7 +244,7 @@ picture{display:contents}
 @media(max-width:860px){.statement{grid-template-columns:1fr;gap:26px;align-items:start}}
 
 /* ═══ OBRA — carrusel horizontal ═════════════════════════ */
-.works{background:var(--paper);color:var(--ink)}
+.works{background:var(--white);color:var(--ink)}
 .works .eyebrow{color:var(--concrete)}
 .works p{color:var(--muted)}
 
@@ -251,8 +252,11 @@ picture{display:contents}
 .works__head{padding-top:clamp(34px,4.5vw,64px)}
 .works__head .giant{
   font-size:clamp(4.2rem,17vw,16rem);margin-left:-.06em;
-  color:var(--terra);
+  color:var(--olive);
 }
+/* los acentos de la línea de tiempo acompañan al título en verde */
+.works .tl__dot{background:var(--olive)}
+.works .tl__year,.works .tl__go{color:var(--olive)}
 .works__note{display:flex;align-items:center;gap:16px;
   margin-top:clamp(18px,2.4vw,30px)}
 .works__note i{flex:1;height:1px;background:var(--rule);max-width:180px}
@@ -423,7 +427,7 @@ picture{display:contents}
 
 /* ═══ CONTACTO ═══════════════════════════════════════════ */
 /* Contacto en arena, sobre tinta. Menos aire abajo: quedaba un vacío grande */
-.contact{background:var(--paper-2);color:var(--ink);
+.contact{background:var(--white);color:var(--ink);
   padding-block:clamp(70px,9vw,130px) clamp(48px,6vw,86px)}
 .contact .eyebrow{color:var(--concrete)}
 .contact p{color:var(--muted)}
