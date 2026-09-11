@@ -23,13 +23,13 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500&family=Hanken+Grotesk:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300&family=Hanken+Grotesk:wght@300;400;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="img/vistalba-02-lg.webp" type="image/webp" fetchpriority="high">
 
 <style>
 /* ══════════════════════════════════════════════════════════
    TRAZZO — Hogares de Autor
-   Arena + terracota · tipografía a gran escala · parallax
+   Jost 200/300 display · Hanken Grotesk cuerpo · IBM Plex Mono cifras
    ══════════════════════════════════════════════════════════ */
 
 :root{
@@ -37,22 +37,24 @@
   --paper-2:#E2D8C7;
   --paper-3:#D6C9B4;
   --white:#FFFFFF;        /* fondo de Obra y Contacto */
-  --ink:#171410;
+  --ink:#22201C;          /* grafito cálido: también es el color de texto */
   --night:#22201C;   /* grafito cálido: el negro puro pesaba demasiado de fondo */
   --terra:#A2643C;
   --terra-dk:#8A5330;
   --terra-deep:#78482A;   /* terracota profundo — fondo de Contacto */
   --olive:#3E4534;        /* verde oliva — fondo de Estudio */
   --concrete:#8B8478;
-  --muted:#635D53;
+  --grey:#545454;         /* gris oscuro de marca */
+  --muted:var(--grey);
 
-  --rule:rgba(23,20,16,.18);
-  --rule-soft:rgba(23,20,16,.09);
+  --rule:rgba(34,32,28,.18);
+  --rule-soft:rgba(34,32,28,.09);
   --rule-inv:rgba(237,229,216,.2);
   --rule-inv-soft:rgba(237,229,216,.1);
 
   --sans:'Jost',system-ui,sans-serif;
   --text:'Hanken Grotesk',system-ui,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;
 
   --wrap:1600px;
   --gut:clamp(20px,3.4vw,54px);
@@ -66,7 +68,7 @@
 html{-webkit-text-size-adjust:100%}
 body{
   background:var(--paper);color:var(--ink);
-  font-family:var(--text);font-weight:300;line-height:1.72;
+  font-family:var(--text);font-weight:300;line-height:1.7;
   -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
   overflow-x:hidden;
 }
@@ -81,24 +83,29 @@ button,input,select,textarea{font:inherit;color:inherit}
 .bay{padding-block:var(--bay)}
 
 .eyebrow{
-  font-family:var(--sans);font-weight:400;font-size:.63rem;
+  font-family:var(--sans);font-weight:300;font-size:.63rem;
   letter-spacing:.32em;text-transform:uppercase;color:var(--concrete);
   display:block;
 }
+/* la caja baja del manual es para los posteos de Instagram: en la web
+   los titulares conservan su caja (nombres propios, frases) */
 .giant{
   font-family:var(--sans);font-weight:200;line-height:.84;
-  letter-spacing:-.028em;text-transform:none;
+  letter-spacing:-.015em;text-transform:none;
 }
 .big{
   font-family:var(--sans);font-weight:200;line-height:.92;
-  letter-spacing:-.022em;font-size:clamp(2.4rem,6.4vw,5.6rem);
+  letter-spacing:-.015em;font-size:clamp(2.4rem,6.4vw,5.6rem);
 }
 .mid{
   font-family:var(--sans);font-weight:200;line-height:1.02;
   letter-spacing:-.015em;font-size:clamp(1.7rem,3.4vw,3rem);
 }
-.lead{font-size:clamp(1rem,1.16vw,1.16rem);line-height:1.74;color:var(--muted)}
-p{color:var(--muted)}
+.lead{font-size:clamp(.94rem,1.06vw,1.0625rem);line-height:1.7;color:var(--muted)}
+/* Hanken Grotesk: pasado los 66 caracteres el texto deja de verse editorial.
+   El 600 queda reservado para una sola palabra dentro de una frase */
+p{color:var(--muted);max-width:66ch}
+p strong{font-weight:600}
 .measure{max-width:44ch}.measure-s{max-width:34ch}
 .terra{color:var(--terra)}
 
@@ -118,8 +125,8 @@ picture{display:contents}
 .media.in img{opacity:1;transform:none}
 .media__credit{
   position:absolute;right:14px;bottom:12px;z-index:2;
-  font-family:var(--sans);font-weight:400;font-size:.6rem;
-  letter-spacing:.14em;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.55);
+  font-family:var(--sans);font-weight:300;font-size:.6rem;
+  letter-spacing:.18em;text-transform:uppercase;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.55);
 }
 
 /* ═══ NAV — repartida a todo el ancho sobre una línea ═════ */
@@ -138,7 +145,7 @@ picture{display:contents}
   height:var(--navh);gap:12px;
 }
 .bar__nav a{
-  font-family:var(--sans);font-weight:400;
+  font-family:var(--sans);font-weight:300;
   font-size:clamp(.72rem,1.05vw,.95rem);letter-spacing:.06em;
   display:inline-flex;align-items:center;gap:10px;position:relative;
   transition:opacity .35s;
@@ -161,7 +168,7 @@ picture{display:contents}
 /* bajada del kit: HOGARES DE AUTOR entre dos filetes */
 .bar__brand em{display:flex;align-items:center;gap:6px;font-style:normal;opacity:.6}
 .bar__brand em u{flex:1;height:1px;background:currentColor;opacity:.55;min-width:6px}
-.bar__brand em i{font-style:normal;font-family:var(--sans);font-weight:400;
+.bar__brand em i{font-style:normal;font-family:var(--sans);font-weight:300;text-transform:uppercase;
   font-size:.4rem;letter-spacing:.26em;white-space:nowrap;line-height:1}
 @media(max-width:860px){.bar__brand em{display:none}}
 /* barra en grafito: el texto y el monograma ya vienen en crema desde el
@@ -190,17 +197,19 @@ picture{display:contents}
 .sheet a{
   display:flex;align-items:baseline;gap:16px;
   font-family:var(--sans);font-weight:200;
-  font-size:clamp(2rem,11vw,3.2rem);line-height:1;letter-spacing:-.02em;
+  font-size:clamp(2rem,11vw,3.2rem);line-height:1;letter-spacing:-.015em;
   padding:clamp(14px,3.4vw,22px) 0;
   border-bottom:1px solid var(--rule-inv-soft);
 }
-.sheet a small{font-family:var(--sans);font-weight:400;font-size:.6rem;
-  letter-spacing:.26em;color:var(--concrete)}
+.sheet a small{font-family:var(--mono);font-weight:400;font-size:.66rem;
+  letter-spacing:.08em;color:var(--concrete);text-transform:none}
 .sheet__foot{margin-top:clamp(28px,6vw,48px);display:flex;flex-direction:column;gap:6px}
-.sheet__foot span{font-family:var(--sans);font-size:.62rem;letter-spacing:.24em;
+/* sólo el rótulo hijo directo: sin el ">" también tomaba el span.num del
+   teléfono y lo pasaba a Jost en mayúsculas */
+.sheet__foot > span{font-family:var(--sans);font-size:.62rem;letter-spacing:.24em;
   text-transform:uppercase;color:var(--concrete)}
 .sheet__foot a{font-size:.95rem;border:0;padding:0;font-family:var(--text);
-  font-weight:300;letter-spacing:0;display:block}
+  font-weight:300;letter-spacing:0;display:block;text-transform:none}
 
 @media(max-width:860px){
   /* los links de la barra pasan al panel: en la barra sólo quedaban los
@@ -341,8 +350,8 @@ picture{display:contents}
 .tl__item:not(.tl__item--r) .tl__side{left:calc(50% + clamp(26px,4vw,70px))}
 .tl__item--r .tl__side{right:calc(50% + clamp(26px,4vw,70px));text-align:right}
 
-.tl__year{display:block;font-family:var(--sans);font-weight:200;
-  font-size:clamp(1.5rem,3.4vw,3rem);line-height:1;color:var(--terra);
+.tl__year{display:block;font-family:var(--mono);font-weight:400;
+  font-size:clamp(1.05rem,2.2vw,2rem);letter-spacing:.02em;line-height:1;color:var(--terra);
   opacity:.62;transition:opacity .4s}
 .tl__item:hover .tl__year{opacity:1}
 
@@ -353,7 +362,7 @@ picture{display:contents}
 }
 .tl__item:hover .tl__float{opacity:1;translate:0 0}
 .tl__name{font-family:var(--sans);font-weight:300;
-  font-size:clamp(1.1rem,2.2vw,1.9rem);letter-spacing:-.012em;line-height:1.1}
+  font-size:clamp(1.1rem,2.2vw,1.9rem);letter-spacing:-.015em;line-height:1.1}
 .tl__meta{font-family:var(--sans);font-size:.6rem;letter-spacing:.2em;
   text-transform:uppercase;color:var(--concrete);margin-top:8px}
 .tl__go{display:inline-flex;align-items:center;gap:10px;margin-top:14px;
@@ -372,7 +381,7 @@ picture{display:contents}
   .tl__dot{top:14px;left:-31px;translate:none;opacity:1}
   .tl__side,.tl__item--r .tl__side{position:static;translate:none;
     max-width:none;text-align:left;margin-top:14px}
-  .tl__year{font-size:1.15rem;opacity:1}
+  .tl__year{font-size:1rem;opacity:1}
   .tl__float{opacity:1;translate:none!important;margin-top:10px;
     padding-top:12px;border-top:1px solid var(--rule)}
   .tl__item--r .tl__go{flex-direction:row}
@@ -409,10 +418,10 @@ picture{display:contents}
 .pillars div{padding:clamp(20px,2.4vw,30px) clamp(12px,1.5vw,22px) 0 0}
 .pillars div+div{border-left:1px solid var(--rule);
   padding-left:clamp(12px,1.5vw,22px)}
-.pillars dt{font-family:var(--sans);font-weight:400;font-size:.66rem;
+.pillars dt{font-family:var(--sans);font-weight:300;font-size:.66rem;
   letter-spacing:.28em;text-transform:uppercase;margin-bottom:9px;
   color:var(--terra)}
-.pillars dd{font-size:.87rem;line-height:1.62;color:var(--muted)}
+.pillars dd{font-size:.875rem;line-height:1.7;color:var(--muted)}
 @media(max-width:620px){
   .pillars{grid-template-columns:1fr}
   .pillars div+div{border-left:0;border-top:1px solid var(--rule);padding-left:0}}
@@ -440,12 +449,12 @@ picture{display:contents}
   gap:clamp(16px,2.4vw,34px);align-items:start;
   padding:clamp(20px,2.6vw,32px) 0;
   border-bottom:1px solid var(--rule-inv-soft);cursor:pointer}
-.proc__no{font-family:var(--sans);font-weight:300;font-size:.66rem;
-  letter-spacing:.2em;color:var(--concrete);padding-top:.5em;
+.proc__no{font-family:var(--mono);font-weight:400;font-size:.7rem;
+  letter-spacing:.08em;color:var(--concrete);padding-top:.5em;
   transition:color .4s}
 .proc__item.on .proc__no{color:#C99C70}
 .proc__item h3{font-family:var(--sans);font-weight:200;
-  font-size:clamp(1.25rem,2.4vw,2rem);letter-spacing:-.012em;line-height:1.15;
+  font-size:clamp(1.25rem,2.4vw,2rem);letter-spacing:-.015em;line-height:1.15;
   color:rgba(237,229,216,.5);transition:color .4s}
 .proc__item.on h3{color:var(--paper)}
 /* el texto se revela al activarse el paso */
@@ -476,7 +485,7 @@ picture{display:contents}
 .contact .field input,.contact .field select,.contact .field textarea{
   color:var(--ink);border-bottom-color:var(--rule)}
 .contact .field input::placeholder,
-.contact .field textarea::placeholder{color:rgba(23,20,16,.32)}
+.contact .field textarea::placeholder{color:rgba(34,32,28,.32)}
 .contact .field input:focus,.contact .field select:focus,
 .contact .field textarea:focus{border-bottom-color:var(--terra)}
 .contact .field select option{background:var(--paper);color:var(--ink)}
@@ -525,7 +534,7 @@ picture{display:contents}
 
 .submit{margin-top:6px;justify-self:start;cursor:pointer;
   background:var(--terra);color:var(--paper);border:1px solid var(--terra);
-  font-family:var(--sans);font-weight:400;font-size:.68rem;
+  font-family:var(--sans);font-weight:300;font-size:.68rem;
   letter-spacing:.22em;text-transform:uppercase;
   padding:17px 34px;display:inline-flex;align-items:center;gap:14px;
   transition:background .4s var(--ease),color .4s var(--ease)}
@@ -533,7 +542,7 @@ picture{display:contents}
 .submit i{display:block;width:22px;height:1px;background:currentColor;
   transition:width .4s var(--ease)}
 .submit:hover i{width:38px}
-.form__note{font-family:var(--sans);font-size:.58rem;letter-spacing:.15em;
+.form__note{font-family:var(--sans);font-size:.58rem;letter-spacing:.18em;
   text-transform:uppercase;color:var(--concrete)}
 .form__ok{display:none;border:1px solid var(--rule-inv);padding:32px;
   font-family:var(--sans);font-size:.7rem;letter-spacing:.2em;
@@ -544,7 +553,7 @@ picture{display:contents}
   border-top:1px solid var(--rule-inv-soft);padding-block:clamp(34px,4.4vw,58px)}
 .foot__in{display:flex;align-items:center;justify-content:space-between;
   gap:22px;flex-wrap:wrap}
-.foot small{font-family:var(--sans);font-size:.6rem;letter-spacing:.14em;
+.foot small{font-family:var(--sans);font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;
   color:rgba(237,229,216,.34)}
 .foot .slug{font-family:var(--sans);font-size:.6rem;letter-spacing:.3em;
   text-transform:uppercase;color:rgba(237,229,216,.42)}
@@ -562,8 +571,10 @@ picture{display:contents}
 }
 .panel__bar .bar__nav{max-width:var(--wrap);margin-inline:auto;
   padding-inline:var(--gut)}
-.panel__tag,.panel__count{font-family:var(--sans);font-size:.62rem;
+.panel__tag{font-family:var(--sans);font-size:.62rem;
   letter-spacing:.26em;text-transform:uppercase;color:var(--concrete)}
+.panel__count{font-family:var(--mono);font-weight:400;font-size:.72rem;
+  letter-spacing:.08em;color:var(--concrete)}
 .panel__x{background:none;border:0;cursor:pointer;padding:8px 0;
   font-family:var(--sans);font-size:.63rem;letter-spacing:.22em;
   text-transform:uppercase;display:inline-flex;align-items:center;gap:11px}
@@ -586,12 +597,12 @@ picture{display:contents}
 }
 .pv__title{
   font-family:var(--sans);font-weight:200;color:var(--terra);
-  font-size:clamp(2.6rem,9vw,8.4rem);line-height:.88;letter-spacing:-.03em;
+  font-size:clamp(2.6rem,9vw,8.4rem);line-height:.88;letter-spacing:-.015em;
   max-width:10ch;
 }
 .pv__year{
-  font-family:var(--sans);font-weight:200;color:var(--terra);
-  font-size:clamp(1.5rem,4.4vw,4rem);line-height:.9;letter-spacing:-.02em;
+  font-family:var(--mono);font-weight:400;color:var(--terra);
+  font-size:clamp(1.1rem,2.8vw,2.4rem);line-height:1;letter-spacing:.02em;
   white-space:nowrap;opacity:.62;
 }
 .pv__shot{
@@ -634,6 +645,17 @@ picture{display:contents}
   letter-spacing:.18em;text-transform:uppercase;color:var(--muted);
   transition:background .35s,color .35s}
 .pv__nav button:hover{background:var(--terra);color:var(--paper)}
+
+/* ═══ IBM PLEX MONO — datos y cotas ═════════════════════
+   Toda cifra, superficie, coordenada, año y número de trazo: así se leen
+   como cota de plano y no como texto de marketing. Sólo 400/500 y nunca
+   en frases completas: la clase envuelve el dato, no la oración */
+.num{font-family:var(--mono);font-weight:400;font-style:normal;
+  letter-spacing:.02em;text-transform:none;font-variant-numeric:tabular-nums}
+p .num,dd .num,a .num{font-size:.9em}
+.eyebrow .num{font-size:1.02em;letter-spacing:.08em}
+.works__note span.num{font-family:var(--mono);font-size:.7rem;letter-spacing:.08em}
+.foot .num{letter-spacing:.06em}
 
 /* ═══ accesibilidad ══════════════════════════════════════ */
 .skip{position:absolute;left:-9999px;top:0;z-index:999;background:var(--ink);
@@ -739,10 +761,10 @@ picture{display:contents}
   <span class="tl__axis" id="tlAxis" aria-hidden="true"></span>
 
   <div class="wrap works__head">
-    <span class="eyebrow rv">01 — Obra construida</span>
+    <span class="eyebrow rv"><span class="num">01</span> — Obra construida</span>
     <h2 class="giant rv" style="--d:.06s">Obra</h2>
     <div class="works__note rv" style="--d:.12s">
-      <i></i><span>2023 — 2025 · Mendoza</span>
+      <i></i><span><span class="num">2023 — 2025</span> · Mendoza</span>
     </div>
   </div>
 
@@ -913,12 +935,12 @@ picture{display:contents}
       </div>
 
       <div class="studio__body">
-        <span class="eyebrow rv">02 — Estudio</span>
+        <span class="eyebrow rv"><span class="num">02</span> — Estudio</span>
         <h2 class="big rv" style="--d:.06s">Diez años<br>al pie de la obra.</h2>
         <div class="rv" style="--d:.12s">
           <p class="lead measure">
             TRAZZO nace de la práctica: proyecto, dirección y obra. Una
-            trayectoria en vivienda unifamiliar y multifamiliar que en 2025
+            trayectoria en vivienda unifamiliar y multifamiliar que en <span class="num">2025</span>
             culminó con la construcción integral de un hotel en Mendoza.
           </p>
           <p class="lead measure">
@@ -942,10 +964,10 @@ picture{display:contents}
 <!-- ══════════ OBRAS EN PROCESO ══════════ -->
 <section class="site bay" id="en-proceso">
   <div class="wrap">
-    <span class="eyebrow rv">03 — Obras en proceso</span>
+    <span class="eyebrow rv"><span class="num">03</span> — Obras en proceso</span>
     <h2 class="big rv" style="--d:.06s;margin-top:18px">Obras en proceso.</h2>
     <p class="lead measure rv" style="--d:.12s;margin-top:20px">
-      Registro de avance. Vivienda unifamiliar en construcción en Mendoza, 2026.
+      Registro de avance. Vivienda unifamiliar en construcción en Mendoza, <span class="num">2026</span>.
     </p>
 
     <div class="proc" id="proc">
@@ -1011,13 +1033,13 @@ picture{display:contents}
 <!-- ══════════ CONTACTO ══════════ -->
 <section class="contact bay" id="contacto">
   <div class="wrap">
-    <span class="eyebrow rv">04 — Contacto</span>
+    <span class="eyebrow rv"><span class="num">04</span> — Contacto</span>
     <h2 class="big rv" style="--d:.06s;margin-top:18px">
       Cada proyecto comienza<br>con una conversación.
     </h2>
 
     <p class="lead measure rv" style="--d:.1s;margin-top:22px">
-      Contanos de qué se trata. Respondemos en menos de 24 horas con una
+      Contanos de qué se trata. Respondemos en menos de <span class="num">24</span> horas con una
       primera lectura del proyecto.
     </p>
 
@@ -1025,7 +1047,7 @@ picture{display:contents}
       <div class="rv">
         <dl class="chan">
           <a href="https://wa.me/542616651611" target="_blank" rel="noopener">
-            <dt>WhatsApp</dt><dd>+54 261 665 1611</dd></a>
+            <dt>WhatsApp</dt><dd><span class="num">+54 261 665 1611</span></dd></a>
           <a href="mailto:martinbatizmb@gmail.com">
             <dt>Email</dt><dd>martinbatizmb@gmail.com</dd></a>
           <a href="https://instagram.com/trazzo.hogaresdeautor" target="_blank" rel="noopener">
@@ -1091,7 +1113,7 @@ picture{display:contents}
       </span>
     </a>
     <span class="slug">Diseño · Técnica · Hogar</span>
-    <small>© 2026 TRAZZO · Mendoza, Argentina</small>
+    <small>© <span class="num">2026</span> TRAZZO · Mendoza, Argentina</small>
   </div>
 </footer>
 
@@ -1465,7 +1487,9 @@ picture{display:contents}
     if (pv.shot.complete && pv.shot.naturalWidth) pv.shot.classList.add('ready');
 
     pv.specs.innerHTML = p.specs.map(function (s) {
-      return '<div><dt>' + s[0] + '</dt><dd>' + s[1] + '</dd></div>';
+      /* año, superficie o coordenada: el dato va en mono */
+      var dato = /^[\d\s·—–\-\/.,:°'"+m²]+$/.test(s[1]) ? ' class="num"' : '';
+      return '<div><dt>' + s[0] + '</dt><dd' + dato + '>' + s[1] + '</dd></div>';
     }).join('');
 
     pv.gal.innerHTML = p.imgs.slice(1).map(function (slug) {
