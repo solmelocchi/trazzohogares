@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>TRAZZO — Hogares de Autor · Arquitectura residencial en Mendoza</title>
 <meta name="description" content="TRAZZO diseña y construye viviendas de autor en Mendoza, Argentina. Diseño · Técnica · Hogar.">
-<meta name="theme-color" content="#EDE5D8">
+<meta name="theme-color" content="#22201C">
 <link rel="canonical" href="https://trazzo.com.ar/">
 
 <meta property="og:type" content="website">
@@ -36,7 +36,6 @@
   --paper:#EDE5D8;
   --paper-2:#E2D8C7;
   --paper-3:#D6C9B4;
-  --white:#FFFFFF;        /* fondo de Obra y Contacto */
   --ink:#22201C;          /* grafito cálido: también es el color de texto */
   --night:#22201C;   /* grafito cálido: el negro puro pesaba demasiado de fondo */
   --terra:#A2643C;
@@ -67,7 +66,7 @@
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{
-  background:var(--paper);color:var(--ink);
+  background:var(--night);color:var(--paper);
   font-family:var(--text);font-weight:300;line-height:1.7;
   -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
   overflow-x:hidden;
@@ -75,8 +74,8 @@ body{
 img,svg,picture{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
 button,input,select,textarea{font:inherit;color:inherit}
-::selection{background:var(--terra);color:var(--paper)}
-:focus-visible{outline:1px solid var(--terra);outline-offset:5px}
+::selection{background:var(--olive);color:var(--paper)}
+:focus-visible{outline:1px solid var(--paper);outline-offset:5px}
 
 /* ── primitivas ──────────────────────────────────────────── */
 .wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gut)}
@@ -118,7 +117,7 @@ p strong{font-weight:600}
 /* media — <picture> no debe generar caja propia: si la genera, el
    height:100% de la imagen se mide contra ella y la foto no llena el marco */
 picture{display:contents}
-.media{position:relative;overflow:hidden;background:var(--ph,var(--paper-3))}
+.media{position:relative;overflow:hidden;background:var(--ph,var(--grey))}
 .media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
   opacity:0;transform:scale(1.08);
   transition:opacity .9s ease,transform 1.8s var(--ease)}
@@ -126,7 +125,7 @@ picture{display:contents}
 .media__credit{
   position:absolute;right:14px;bottom:12px;z-index:2;
   font-family:var(--sans);font-weight:300;font-size:.6rem;
-  letter-spacing:.18em;text-transform:uppercase;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.55);
+  letter-spacing:.18em;text-transform:uppercase;color:var(--paper);text-shadow:0 1px 8px rgba(0,0,0,.55);
 }
 
 /* ═══ NAV — repartida a todo el ancho sobre una línea ═════ */
@@ -272,7 +271,7 @@ picture{display:contents}
   text-transform:uppercase;color:rgba(237,229,216,.55)}
 .hero__cue{display:block;width:1px;height:54px;
   background:rgba(237,229,216,.2);position:relative;overflow:hidden}
-.hero__cue::after{content:"";position:absolute;inset:0;background:var(--terra);
+.hero__cue::after{content:"";position:absolute;inset:0;background:var(--paper);
   transform-origin:top;animation:sweep 2.8s var(--ease) infinite}
 @keyframes sweep{
   0%{transform:scaleY(0);transform-origin:top}
@@ -290,31 +289,33 @@ picture{display:contents}
 @media(max-width:860px){.statement{grid-template-columns:1fr;gap:26px;align-items:start}}
 
 /* ═══ OBRA — carrusel horizontal ═════════════════════════ */
-.works{background:var(--white);color:var(--ink)}
-.works .eyebrow{color:var(--concrete)}
-.works p{color:var(--muted)}
+/* sin blanco: Obra en gris oscuro de marca y el texto en crema */
+.works{background:var(--grey);color:var(--paper)}
+.works .eyebrow{color:rgba(237,229,216,.8)}
+.works p{color:rgba(237,229,216,.84)}
+.works .tl__name{color:var(--paper)}
 
 .works{position:relative}
 .works__head{padding-top:clamp(34px,4.5vw,64px)}
 .works__head .giant{
   font-size:clamp(4.2rem,17vw,16rem);margin-left:-.06em;
-  color:var(--olive);
+  color:var(--paper);
 }
-/* los acentos de la línea de tiempo acompañan al título en verde */
-.works .tl__dot{background:var(--olive)}
-.works .tl__year,.works .tl__go{color:var(--olive)}
+/* sobre el gris el oliva no se lee (1,3:1): los acentos van en crema */
+.works .tl__dot{background:var(--paper)}
+.works .tl__year,.works .tl__go{color:var(--paper)}
 .works__note{display:flex;align-items:center;gap:16px;
   margin-top:clamp(18px,2.4vw,30px)}
-.works__note i{flex:1;height:1px;background:var(--rule);max-width:180px}
+.works__note i{flex:1;height:1px;background:var(--rule-inv);max-width:180px}
 .works__note span{font-family:var(--sans);font-size:.6rem;letter-spacing:.26em;
-  text-transform:uppercase;color:var(--concrete)}
+  text-transform:uppercase;color:rgba(237,229,216,.8)}
 
 /* línea de tiempo: el eje arranca arriba de todo y baja por la sección
    entera; las fotos guardan siempre la misma distancia a la línea */
 .tl{position:relative;padding-bottom:clamp(30px,4vw,60px)}
 .tl__axis{
   position:absolute;left:50%;top:0;bottom:0;width:1px;z-index:0;
-  background:var(--rule);transform-origin:top;transform:scaleY(var(--draw,0));
+  background:var(--rule-inv);transform-origin:top;transform:scaleY(var(--draw,0));
 }
 
 .tl__item{position:relative;display:grid;grid-template-columns:repeat(12,1fr)}
@@ -364,7 +365,7 @@ picture{display:contents}
 .tl__name{font-family:var(--sans);font-weight:300;
   font-size:clamp(1.1rem,2.2vw,1.9rem);letter-spacing:-.015em;line-height:1.1}
 .tl__meta{font-family:var(--sans);font-size:.6rem;letter-spacing:.2em;
-  text-transform:uppercase;color:var(--concrete);margin-top:8px}
+  text-transform:uppercase;color:rgba(237,229,216,.8);margin-top:8px}
 .tl__go{display:inline-flex;align-items:center;gap:10px;margin-top:14px;
   font-family:var(--sans);font-size:.62rem;letter-spacing:.2em;
   text-transform:uppercase;color:var(--terra)}
@@ -383,7 +384,7 @@ picture{display:contents}
     max-width:none;text-align:left;margin-top:14px}
   .tl__year{font-size:1rem;opacity:1}
   .tl__float{opacity:1;translate:none!important;margin-top:10px;
-    padding-top:12px;border-top:1px solid var(--rule)}
+    padding-top:12px;border-top:1px solid var(--rule-inv)}
   .tl__item--r .tl__go{flex-direction:row}
 }
 
@@ -401,7 +402,7 @@ picture{display:contents}
 .studio p{color:rgba(237,229,216,.68)}
 .studio .pillars{border-top-color:var(--rule-inv)}
 .studio .pillars div+div{border-left-color:var(--rule-inv)}
-.studio .pillars dt{color:#C99C70}
+.studio .pillars dt{color:rgba(237,229,216,.78)}
 .studio .pillars dd{color:rgba(237,229,216,.64)}
 @media(max-width:620px){
   .studio .pillars div+div{border-top-color:var(--rule-inv)}}
@@ -452,7 +453,7 @@ picture{display:contents}
 .proc__no{font-family:var(--mono);font-weight:400;font-size:.7rem;
   letter-spacing:.08em;color:var(--concrete);padding-top:.5em;
   transition:color .4s}
-.proc__item.on .proc__no{color:#C99C70}
+.proc__item.on .proc__no{color:var(--paper)}
 .proc__item h3{font-family:var(--sans);font-weight:200;
   font-size:clamp(1.25rem,2.4vw,2rem);letter-spacing:-.015em;line-height:1.15;
   color:rgba(237,229,216,.5);transition:color .4s}
@@ -473,26 +474,28 @@ picture{display:contents}
 
 /* ═══ CONTACTO ═══════════════════════════════════════════ */
 /* Contacto en arena, sobre tinta. Menos aire abajo: quedaba un vacío grande */
-.contact{background:var(--white);color:var(--ink);
+.contact{background:var(--grey);color:var(--paper);
   padding-block:clamp(70px,9vw,130px) clamp(48px,6vw,86px)}
-.contact .eyebrow{color:var(--concrete)}
-.contact p{color:var(--muted)}
-.contact .chan{border-top-color:var(--rule)}
-.contact .chan a,.contact .chan span{border-bottom-color:var(--rule-soft)}
+.contact .eyebrow{color:rgba(237,229,216,.8)}
+.contact p{color:rgba(237,229,216,.84)}
+.contact .chan{border-top-color:var(--rule-inv)}
+.contact .chan a,.contact .chan span{border-bottom-color:var(--rule-inv-soft)}
 .contact .chan dt,.contact .field label,.contact .form__note{
-  color:var(--concrete)}
-.contact .chan dd{color:var(--ink)}
+  color:rgba(237,229,216,.8)}
+.contact .chan dd{color:var(--paper)}
 .contact .field input,.contact .field select,.contact .field textarea{
-  color:var(--ink);border-bottom-color:var(--rule)}
+  color:var(--paper);border-bottom-color:rgba(237,229,216,.36)}
 .contact .field input::placeholder,
-.contact .field textarea::placeholder{color:rgba(34,32,28,.32)}
+.contact .field textarea::placeholder{color:rgba(237,229,216,.5)}
 .contact .field input:focus,.contact .field select:focus,
-.contact .field textarea:focus{border-bottom-color:var(--terra)}
-.contact .field select option{background:var(--paper);color:var(--ink)}
-.contact .submit{background:var(--terra);color:var(--paper);
-  border-color:var(--terra)}
-.contact .submit:hover{background:transparent;color:var(--terra)}
-.contact .form__ok{border-color:var(--rule);color:var(--ink)}
+.contact .field textarea:focus{border-bottom-color:var(--paper)}
+.contact .field select option{background:var(--night);color:var(--paper)}
+/* sin bloques claros: botón oliva con filete crema. El texto crema sobre
+   oliva da 7,9:1 y el filete contra el gris 6:1 */
+.contact .submit{background:var(--olive);color:var(--paper);
+  border-color:var(--paper)}
+.contact .submit:hover{background:var(--night);color:var(--paper)}
+.contact .form__ok{border-color:var(--rule-inv);color:var(--paper)}
 .contact__grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);
   gap:clamp(34px,6vw,100px);align-items:stretch;
   margin-top:clamp(40px,6vw,80px)}
@@ -527,7 +530,7 @@ picture{display:contents}
 .field input:focus,.field select:focus,.field textarea:focus{
   outline:none;border-bottom-color:var(--terra)}
 .field select{cursor:pointer;padding-right:26px;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7'%3E%3Cpath d='M1 1l4.5 4.5L10 1' stroke='%238B8478' stroke-width='1.2' fill='none'/%3E%3C/svg%3E");
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7'%3E%3Cpath d='M1 1l4.5 4.5L10 1' stroke='%23EDE5D8' stroke-width='1.2' fill='none'/%3E%3C/svg%3E");
   background-repeat:no-repeat;background-position:right center}
 .field select option{background:var(--night);color:var(--paper)}
 .field textarea{resize:vertical;min-height:92px;line-height:1.7}
@@ -560,21 +563,24 @@ picture{display:contents}
 
 /* ═══ PANEL DE PROYECTO ══════════════════════════════════ */
 .panel{
-  position:fixed;inset:0;z-index:900;background:var(--white);color:var(--ink);
+  position:fixed;inset:0;z-index:900;background:var(--night);color:var(--paper);
   overflow-y:auto;opacity:0;visibility:hidden;
   transition:opacity .55s var(--ease),visibility .55s;
 }
 .panel.open{opacity:1;visibility:visible}
+/* texto del panel sobre grafito: el gris de párrafo no se leería */
+.panel p,.panel .lead{color:rgba(237,229,216,.8)}
+.panel .eyebrow{color:rgba(237,229,216,.72)}
 .panel__bar{
-  position:sticky;top:0;z-index:5;background:rgba(255,255,255,.94);
-  backdrop-filter:blur(12px);border-bottom:1px solid var(--rule);
+  position:sticky;top:0;z-index:5;background:rgba(34,32,28,.94);
+  backdrop-filter:blur(12px);border-bottom:1px solid var(--rule-inv);
 }
 .panel__bar .bar__nav{max-width:var(--wrap);margin-inline:auto;
   padding-inline:var(--gut)}
 .panel__tag{font-family:var(--sans);font-size:.62rem;
-  letter-spacing:.26em;text-transform:uppercase;color:var(--concrete)}
+  letter-spacing:.26em;text-transform:uppercase;color:rgba(237,229,216,.72)}
 .panel__count{font-family:var(--mono);font-weight:400;font-size:.72rem;
-  letter-spacing:.08em;color:var(--concrete)}
+  letter-spacing:.08em;color:rgba(237,229,216,.72)}
 .panel__x{background:none;border:0;cursor:pointer;padding:8px 0;
   font-family:var(--sans);font-size:.63rem;letter-spacing:.22em;
   text-transform:uppercase;display:inline-flex;align-items:center;gap:11px}
@@ -596,12 +602,12 @@ picture{display:contents}
   gap:clamp(10px,1.6vw,24px);max-width:58%;
 }
 .pv__title{
-  font-family:var(--sans);font-weight:200;color:var(--terra);
+  font-family:var(--sans);font-weight:200;color:var(--paper);
   font-size:clamp(2.6rem,9vw,8.4rem);line-height:.88;letter-spacing:-.015em;
   max-width:10ch;
 }
 .pv__year{
-  font-family:var(--mono);font-weight:400;color:var(--terra);
+  font-family:var(--mono);font-weight:400;color:var(--paper);
   font-size:clamp(1.1rem,2.8vw,2.4rem);line-height:1;letter-spacing:.02em;
   white-space:nowrap;opacity:.62;
 }
@@ -609,7 +615,7 @@ picture{display:contents}
   position:absolute;z-index:2;right:var(--gut);top:50%;
   transform:translateY(-50%);
   width:min(46%,560px);aspect-ratio:3/2;overflow:hidden;
-  background:var(--paper-3);
+  background:var(--grey);
   box-shadow:0 30px 80px -30px rgba(23,20,16,.45);
 }
 .pv__shot img{width:100%;height:100%;object-fit:cover;opacity:0;
@@ -626,25 +632,25 @@ picture{display:contents}
   padding-bottom:clamp(60px,9vw,140px);
   display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);
   gap:clamp(28px,5vw,84px);align-items:start;
-  border-top:1px solid var(--rule);padding-top:clamp(30px,4vw,56px);
+  border-top:1px solid var(--rule-inv);padding-top:clamp(30px,4vw,56px);
 }
 @media(max-width:900px){.pv__body{grid-template-columns:1fr}}
 
 .pv__gallery{display:grid;gap:clamp(10px,1.4vw,18px)}
 .pv__gallery .media{aspect-ratio:4/3}
-.pv__specs{border-top:1px solid var(--rule)}
+.pv__specs{border-top:1px solid var(--rule-inv)}
 .pv__specs div{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);
-  gap:14px;padding:14px 0;border-bottom:1px solid var(--rule-soft)}
+  gap:14px;padding:14px 0;border-bottom:1px solid var(--rule-inv-soft)}
 .pv__specs dt{font-family:var(--sans);font-size:.57rem;letter-spacing:.22em;
-  text-transform:uppercase;color:var(--concrete);padding-top:4px}
+  text-transform:uppercase;color:rgba(237,229,216,.72);padding-top:4px}
 .pv__specs dd{font-size:.92rem}
-.pv__nav{display:flex;gap:1px;background:var(--rule);
-  border:1px solid var(--rule);margin-top:clamp(28px,3.4vw,44px)}
-.pv__nav button{flex:1;background:var(--white);border:0;cursor:pointer;
+.pv__nav{display:flex;gap:1px;background:var(--rule-inv);
+  border:1px solid var(--rule-inv);margin-top:clamp(28px,3.4vw,44px)}
+.pv__nav button{flex:1;background:var(--night);border:0;cursor:pointer;
   padding:15px 12px;font-family:var(--sans);font-size:.62rem;
-  letter-spacing:.18em;text-transform:uppercase;color:var(--muted);
+  letter-spacing:.18em;text-transform:uppercase;color:rgba(237,229,216,.78);
   transition:background .35s,color .35s}
-.pv__nav button:hover{background:var(--terra);color:var(--paper)}
+.pv__nav button:hover{background:var(--olive);color:var(--paper)}
 
 /* ═══ IBM PLEX MONO — datos y cotas ═════════════════════
    Toda cifra, superficie, coordenada, año y número de trazo: así se leen
