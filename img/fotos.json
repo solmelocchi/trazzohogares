@@ -1,0 +1,244 @@
+{
+  "alma-gardenia": [
+    {
+      "slug": "alma-gardenia-f01",
+      "w": 1447,
+      "h": 1087,
+      "color": "#776958",
+      "vertical": false,
+      "origen": "22.jpeg"
+    },
+    {
+      "slug": "alma-gardenia-f02",
+      "w": 1448,
+      "h": 1086,
+      "color": "#a38c79",
+      "vertical": false,
+      "origen": "23.jpeg"
+    },
+    {
+      "slug": "alma-gardenia-f03",
+      "w": 1448,
+      "h": 1086,
+      "color": "#8e7560",
+      "vertical": false,
+      "origen": "27.jpeg"
+    },
+    {
+      "slug": "alma-gardenia-f04",
+      "w": 1292,
+      "h": 1218,
+      "color": "#7b795a",
+      "vertical": false,
+      "origen": "34.jpeg"
+    },
+    {
+      "slug": "alma-gardenia-f05",
+      "w": 1087,
+      "h": 1447,
+      "color": "#806d5c",
+      "vertical": true,
+      "origen": "35.jpeg"
+    },
+    {
+      "slug": "alma-gardenia-f06",
+      "w": 1448,
+      "h": 1086,
+      "color": "#6b6258",
+      "vertical": false,
+      "origen": "WhatsApp Image 2026-09-23 at 17.20.27.jpeg"
+    }
+  ],
+  "las-moras": [
+    {
+      "slug": "las-moras-f01",
+      "w": 1600,
+      "h": 898,
+      "color": "#836449",
+      "vertical": false,
+      "origen": "1.jpeg"
+    },
+    {
+      "slug": "las-moras-f02",
+      "w": 1536,
+      "h": 1024,
+      "color": "#92918e",
+      "vertical": false,
+      "origen": "2.jpeg"
+    },
+    {
+      "slug": "las-moras-f03",
+      "w": 1448,
+      "h": 1086,
+      "color": "#9e8e80",
+      "vertical": false,
+      "origen": "5.jpeg"
+    },
+    {
+      "slug": "las-moras-f04",
+      "w": 1536,
+      "h": 1024,
+      "color": "#928e86",
+      "vertical": false,
+      "origen": "6.jpeg"
+    },
+    {
+      "slug": "las-moras-f05",
+      "w": 1600,
+      "h": 900,
+      "color": "#977b61",
+      "vertical": false,
+      "origen": "7.jpeg"
+    },
+    {
+      "slug": "las-moras-f06",
+      "w": 1536,
+      "h": 1024,
+      "color": "#938c82",
+      "vertical": false,
+      "origen": "WhatsApp Image 2026-09-23 at 17.17.48.jpeg"
+    }
+  ],
+  "los-peralitos": [
+    {
+      "slug": "los-peralitos-f01",
+      "w": 1508,
+      "h": 1043,
+      "color": "#a88c6c",
+      "vertical": false,
+      "origen": "13.jpeg"
+    },
+    {
+      "slug": "los-peralitos-f02",
+      "w": 1094,
+      "h": 1438,
+      "color": "#ac9f93",
+      "vertical": true,
+      "origen": "2.jpeg"
+    },
+    {
+      "slug": "los-peralitos-f03",
+      "w": 1460,
+      "h": 1078,
+      "color": "#a59c7b",
+      "vertical": false,
+      "origen": "3.jpeg"
+    },
+    {
+      "slug": "los-peralitos-f04",
+      "w": 1448,
+      "h": 1086,
+      "color": "#878f70",
+      "vertical": false,
+      "origen": "5.jpeg"
+    },
+    {
+      "slug": "los-peralitos-f05",
+      "w": 1449,
+      "h": 1085,
+      "color": "#938477",
+      "vertical": false,
+      "origen": "6.jpeg"
+    },
+    {
+      "slug": "los-peralitos-f06",
+      "w": 1448,
+      "h": 1086,
+      "color": "#b19375",
+      "vertical": false,
+      "origen": "WhatsApp Image 2026-09-23 at 17.19.26.jpeg"
+    }
+  ],
+  "valle-escondido": [
+    {
+      "slug": "valle-escondido-f01",
+      "w": 1448,
+      "h": 1086,
+      "color": "#7b7355",
+      "vertical": false,
+      "origen": "1.jpeg"
+    },
+    {
+      "slug": "valle-escondido-f02",
+      "w": 1450,
+      "h": 1085,
+      "color": "#8b6a50",
+      "vertical": false,
+      "origen": "2.jpeg"
+    },
+    {
+      "slug": "valle-escondido-f03",
+      "w": 1342,
+      "h": 1172,
+      "color": "#858365",
+      "vertical": false,
+      "origen": "3.jpeg"
+    },
+    {
+      "slug": "valle-escondido-f04",
+      "w": 1086,
+      "h": 1448,
+      "color": "#9b8d72",
+      "vertical": true,
+      "origen": "5.jpeg"
+    },
+    {
+      "slug": "valle-escondido-f05",
+      "w": 1448,
+      "h": 1086,
+      "color": "#8f7259",
+      "vertical": false,
+      "origen": "WhatsApp Image 2026-09-23 at 17.22.00.jpeg"
+    }
+  ],
+  "alzaga": [
+    {
+      "slug": "alzaga-f01",
+      "w": 1473,
+      "h": 1068,
+      "color": "#939883",
+      "vertical": false,
+      "origen": "1.jpeg"
+    },
+    {
+      "slug": "alzaga-f02",
+      "w": 1122,
+      "h": 1402,
+      "color": "#b18b68",
+      "vertical": true,
+      "origen": "2.jpeg"
+    },
+    {
+      "slug": "alzaga-f03",
+      "w": 1086,
+      "h": 1448,
+      "color": "#817768",
+      "vertical": true,
+      "origen": "3.jpeg"
+    },
+    {
+      "slug": "alzaga-f04",
+      "w": 1448,
+      "h": 1086,
+      "color": "#ab9d8c",
+      "vertical": false,
+      "origen": "4.jpeg"
+    },
+    {
+      "slug": "alzaga-f05",
+      "w": 1448,
+      "h": 1086,
+      "color": "#9a9276",
+      "vertical": false,
+      "origen": "5.jpeg"
+    },
+    {
+      "slug": "alzaga-f06",
+      "w": 1449,
+      "h": 1085,
+      "color": "#94946f",
+      "vertical": false,
+      "origen": "WhatsApp Image 2026-09-23 at 17.30.36.jpeg"
+    }
+  ]
+}

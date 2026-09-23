@@ -14,3 +14,12 @@
 Thumbs.db
 desktop.ini
 .DS_Store
+
+# Dependencias y compilados de la version en React (vive en la rama react-wip)
+/node_modules/
+/dist/
+/.claude/
+
+# Fotos originales que se dejan para procesar: al repo van solo las de /img
+/fotos/
+/.vite/
